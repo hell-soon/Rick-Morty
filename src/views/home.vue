@@ -1,25 +1,20 @@
 <script setup lang="ts">
-import CardGrid from '@/components/home/card-grid.vue'
+import Contant from '@/components/home/index.vue'
+import Default from '@/layouts/default.vue'
 
 import { useCharacterListStore } from '@/stores/character'
 
 const store = useCharacterListStore()
 
+watch(store.params, () => {
+  store.fetchCharacterList(store.params)
+})
+
 store.fetchCharacterList()
 </script>
 
 <template>
-  <main class="container">
-    <CardGrid />
-  </main>
+  <Default>
+    <Contant />
+  </Default>
 </template>
-
-<style scoped lang="scss">
-.container {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 50px;
-}
-</style>

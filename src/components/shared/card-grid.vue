@@ -1,21 +1,12 @@
 <script setup lang="ts">
-import card from '@/components/ui/card.vue'
 import { useCharacterListStore } from '@/stores/character'
 
 const store = useCharacterListStore()
-
-function onClickHandler() {
-  store.fetchCharacterList(store.params)
-}
 </script>
 
 <template>
   <div class="card-grid">
-    <card
-      v-for="item in store.characterList"
-      :key="item.id"
-      :item="item"
-    />
+    <slot name="contant" />
   </div>
 
   <vue-awesome-paginate
@@ -23,7 +14,6 @@ function onClickHandler() {
     :total-items="store.res?.info.count"
     :items-per-page="20"
     :max-pages-shown="5"
-    @click="onClickHandler"
   />
 </template>
 
