@@ -1,0 +1,38 @@
+@import './reset.scss';
+@import './fonts';
+@import './pagination.scss';
+
+body {
+  background-color: rgb(31, 34, 41);
+}
+
+.container {
+  max-width: 1440px;
+  margin: 50px auto;
+}
+
+h2 {
+  font-family: 'Segoe UI';
+  font-weight: 700;
+  font-size: 1.6rem;
+  line-height: 1.1;
+  color: white;
+}
+
+.body {
+  font-family: 'Segoe Ui';
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 29.25px;
+}
+
+.footnote {
+  font-family: 'Segoe Ui';
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+}
+
+.text-gray {
+  color: rgb(171, 163, 152);
+}
